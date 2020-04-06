@@ -28,6 +28,11 @@
                 <span asp-validation-for="Age" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="BirthDay" class="control-label"></label>
+                <input type="date" asp-for="BirthDay" class="form-control" />
+                <span asp-validation-for="BirthDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
