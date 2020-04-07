@@ -18,5 +18,7 @@ namespace FluentValidationApp.Web.Models
         public DateTime? BirthDay { get; set; }
 
         public IList<Address> Addresses { get; set; }
+
+        public Gender Gender { get; set; }
     }
 }
