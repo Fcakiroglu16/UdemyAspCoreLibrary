@@ -58,7 +58,7 @@ namespace FluentValidationApp.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Email,Age,BirthDay")] Customer customer)
+        public async Task<IActionResult> Create(Customer customer)
         {
             var result = _customerValidator.Validate(customer);
 
