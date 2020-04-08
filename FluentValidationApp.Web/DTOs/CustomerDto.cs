@@ -16,8 +16,8 @@ namespace FluentValidationApp.Web.DTOs
 
         public string FullName { get; set; }
 
-        public string CCNumber { get; set; }
+        public string Number { get; set; }
 
-        public DateTime CCValidDate { get; set; }
+        public DateTime ValidDate { get; set; }
     }
 }
