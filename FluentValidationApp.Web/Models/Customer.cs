@@ -21,6 +21,8 @@ namespace FluentValidationApp.Web.Models
 
         public Gender Gender { get; set; }
 
+        public CreditCard CreditCard { get; set; }
+
         public string GetFullName()
         {
             return $"{Name}-{Email}-{Age}";
