@@ -31,15 +31,14 @@ namespace RateLimit.API
 
             services.AddMemoryCache();
 
-            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+            services.Configure<ClientRateLimitOptions>(Configuration.GetSection("ClientRateLimiting"));
 
-            services.Configure<IpRateLimitPolicies>(Configuration.GetSection("IpRateLimitPolicies"));
+            services.Configure<ClientRateLimitPolicies>(Configuration.GetSection("ClientRateLimitPolicies"));
 
-            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>();
+
             services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
-
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
             services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
             services.AddControllers();
@@ -52,7 +51,7 @@ namespace RateLimit.API
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseIpRateLimiting();
+            app.UseClientRateLimiting();
             app.UseHttpsRedirection();
 
             app.UseRouting();
