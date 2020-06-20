@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="SendGrid" Version="9.16.0" />
     <PackageReference Include="Smidge" Version="3.1.0" />
   </ItemGroup>
 
